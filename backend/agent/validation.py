@@ -72,6 +72,7 @@ _STATUS_MAP: dict[str, TransactionStatus] = {
     "approved": TransactionStatus.SUCCESS,
     "ok": TransactionStatus.SUCCESS,
     "posted": TransactionStatus.SUCCESS,
+    "recorded": TransactionStatus.SUCCESS,
     # failure family
     "failed": TransactionStatus.FAILED,
     "failure": TransactionStatus.FAILED,
@@ -90,6 +91,7 @@ _STATUS_MAP: dict[str, TransactionStatus] = {
     "created": TransactionStatus.PENDING,
     "authorized": TransactionStatus.PENDING,
     "on_hold": TransactionStatus.PENDING,
+    "delayed": TransactionStatus.PENDING,
     # unwind family
     "reversed": TransactionStatus.REVERSED,
     "reversal": TransactionStatus.REVERSED,

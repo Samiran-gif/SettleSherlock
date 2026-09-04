@@ -14,6 +14,7 @@ from app.services.ai_explanation import (
 )
 from app.services.data_loader import DataLoader, get_data_loader
 from app.services.investigation import investigate
+from app.services.investigation_ai import investigate_with_ai
 
 router = APIRouter(prefix="/transactions", tags=["transactions"])
 
@@ -104,3 +105,28 @@ async def get_transaction_explanation(
     investigation = investigate(transaction_id, records)
 
     return explainer.explain(investigation)
+
+@router.get(
+    "/{transaction_id}/ai-investigation",
+    summary="Run the Investigation AI analysis for a transaction",
+)
+async def get_ai_investigation(
+    transaction_id: str,
+    loader: DataLoader = Depends(get_data_loader),
+):
+    """Run the broader Investigation AI analysis.
+
+    The existing deterministic settlement investigation remains the source
+    of truth for settlement status. This endpoint adds AI-powered pattern,
+    root-cause and evidence analysis.
+    """
+    records = _load_records_or_404(loader, transaction_id)
+
+    settlement_investigation = investigate(transaction_id, records)
+    ai_investigation = investigate_with_ai(transaction_id, records)
+
+    return {
+        "transaction_id": transaction_id,
+        "settlement_investigation": settlement_investigation.model_dump(),
+        "ai_investigation": ai_investigation.get("agent"),
+    }
