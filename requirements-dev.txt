@@ -1,0 +1,2 @@
+# Test tooling. The suite needs no API key and makes no network calls.
+pytest>=8.0.0
