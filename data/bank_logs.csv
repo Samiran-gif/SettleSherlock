@@ -1,0 +1,32 @@
+bank_log_id,settlement_id,bank_reference,timestamp,status,response_code,message
+BNK-0001,SET-001,BANK-001,2026-08-24 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0002,SET-001,BANK-001,2026-08-24 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0003,SET-001,BANK-001,2026-08-25 10:00:00,COMPLETED,200,Payout of 11536.68 credited to merchant account
+BNK-0004,SET-002,BANK-002,2026-08-25 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0005,SET-002,BANK-002,2026-08-25 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0006,SET-002,BANK-002,2026-08-26 10:00:00,COMPLETED,200,Payout of 16975.45 credited to merchant account
+BNK-0007,SET-003,BANK-003,2026-08-26 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0008,SET-003,BANK-003,2026-08-26 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0009,SET-003,BANK-003,2026-08-27 10:00:00,COMPLETED,200,Payout of 111116.03 credited to merchant account
+BNK-0010,SET-004,BANK-004,2026-08-27 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0011,SET-004,BANK-004,2026-08-27 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0012,SET-004,BANK-004,2026-08-28 10:00:00,COMPLETED,200,Payout of 25154.69 credited to merchant account
+BNK-0013,SET-005,BANK-005,2026-08-28 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0014,SET-005,BANK-005,2026-08-28 23:05:00,REJECTED,402,Payout rejected: insufficient balance in platform pool account
+BNK-0015,SET-006,BANK-006,2026-08-29 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0016,SET-006,BANK-006,2026-08-29 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system - awaiting confirmation
+BNK-0017,SET-007,BANK-007,2026-08-30 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0018,SET-007,BANK-007,2026-08-30 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0019,SET-007,BANK-007,2026-08-31 10:00:00,COMPLETED,206,Partial payout: 14951.42 of 24919.04 credited; remaining credits failed beneficiary validation
+BNK-0020,SET-010,BANK-010,2026-09-01 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0021,SET-011,BANK-011,2026-09-01 22:42:00,REJECTED,400,Payout rejected: beneficiary account number failed validation
+BNK-0022,SET-010,BANK-010,2026-09-01 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0023,SET-010,BANK-010,2026-09-02 10:00:00,COMPLETED,200,Payout of 51199.96 credited to merchant account
+BNK-0024,SET-012,BANK-012,2026-09-02 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0025,SET-013,BANK-013,2026-09-02 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0026,SET-013,BANK-013,2026-09-02 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0027,SET-012,BANK-012,2026-09-02 23:01:00,TIMEOUT,504,Bank response timeout - no acknowledgement received
+BNK-0028,SET-013,BANK-013,2026-09-03 10:00:00,COMPLETED,200,Payout of 4669.71 credited to merchant account
+BNK-0029,SET-014,BANK-014,2026-09-03 22:30:00,ACCEPTED,200,Settlement file accepted by bank for processing
+BNK-0030,SET-014,BANK-014,2026-09-03 22:50:00,PROCESSING,202,Payout batch queued in bank clearing system
+BNK-0031,SET-014,BANK-014,2026-09-04 10:00:00,COMPLETED,200,Payout of 28804.55 credited to merchant account
