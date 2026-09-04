@@ -1,0 +1,22 @@
+[project]
+name = "settlesherlock-investigation-ai"
+version = "1.0.0"
+description = "Investigation AI / root-cause analysis agent for SettleSherlock"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Optional LLM narrative layer. The agent is fully functional without these.
+llm = ["anthropic>=0.40.0", "python-dotenv>=1.0.0"]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+settlesherlock-investigate = "agent.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.setuptools]
+packages = ["agent"]
