@@ -1,0 +1,24 @@
+[
+  {
+    "transaction_id": "TXN-9001",
+    "timestamp": "2026-08-20T08:30:00Z",
+    "sender": "ACC-CUST-501",
+    "receiver": "MERCH-TRAVEL-08",
+    "amount": "1,250.00",
+    "currency": "usd",
+    "status": "Completed"
+  },
+  {
+    "transaction_id": "TXN-9002",
+    "sender": "ACC-CUST-501",
+    "receiver": "MERCH-TRAVEL-08",
+    "amount": 1250,
+    "status": "settled"
+  },
+  {
+    "timestamp": "not-a-real-timestamp",
+    "sender": "ACC-CUST-501",
+    "amount": "unknown",
+    "status": "???"
+  }
+]

@@ -1,0 +1,10 @@
+# SettleSherlock Investigation AI — runtime dependencies.
+#
+# The deterministic investigation pipeline uses only the Python standard
+# library, so this file is empty by design. Install nothing to run the agent.
+#
+# The optional LLM narrative layer (agent/llm.py) needs the packages below.
+# It stays disabled unless SETTLESHERLOCK_LLM_ENABLED=true, and the agent
+# degrades to the deterministic report if they are absent.
+#
+#   pip install -r requirements-llm.txt
