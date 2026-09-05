@@ -1,6 +1,51 @@
-node_modules
-dist
-.env
-.env.local
-.test-build
+# Node / frontend
+node_modules/
+dist/
+.test-build/
 *.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# Build / packaging
+build/
+develop-eggs/
+eggs/
+.eggs/
+sdist/
+wheels/
+lib/
+lib64/
+parts/
+*.manifest
+*.spec
+
+# Local investigation output
+out/
+*.report.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

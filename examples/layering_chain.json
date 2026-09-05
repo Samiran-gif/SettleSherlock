@@ -1,0 +1,91 @@
+{
+  "case_id": "CASE-LAYER-330",
+  "reported_by": "aml_screening",
+  "complaint": "Large inbound credit moved on immediately through newly opened accounts.",
+  "transactions": [
+    {
+      "transaction_id": "TXN-7001",
+      "timestamp": "2026-08-18T09:00:00Z",
+      "sender": "ACC-ORIGIN-A",
+      "receiver": "ACC-HOP-B",
+      "amount": 50000.0,
+      "currency": "EUR",
+      "transaction_type": "transfer",
+      "account_id": "ACC-ORIGIN-A",
+      "bank": "Banca Ligure",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4401"
+    },
+    {
+      "transaction_id": "TXN-7002",
+      "timestamp": "2026-08-18T09:12:30Z",
+      "sender": "ACC-HOP-B",
+      "receiver": "ACC-HOP-C",
+      "amount": 49500.0,
+      "currency": "EUR",
+      "transaction_type": "transfer",
+      "account_id": "ACC-HOP-B",
+      "bank": "Banca Ligure",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4402"
+    },
+    {
+      "transaction_id": "TXN-7003",
+      "timestamp": "2026-08-18T09:25:11Z",
+      "sender": "ACC-HOP-C",
+      "receiver": "ACC-HOP-D",
+      "amount": 49000.0,
+      "currency": "EUR",
+      "transaction_type": "transfer",
+      "account_id": "ACC-HOP-C",
+      "bank": "Adria Bank",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4403"
+    },
+    {
+      "transaction_id": "TXN-7004",
+      "timestamp": "2026-08-18T09:41:47Z",
+      "sender": "ACC-HOP-D",
+      "receiver": "ACC-ORIGIN-A",
+      "amount": 48600.0,
+      "currency": "EUR",
+      "transaction_type": "transfer",
+      "account_id": "ACC-HOP-D",
+      "bank": "Adria Bank",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4404"
+    },
+    {
+      "transaction_id": "TXN-7005",
+      "timestamp": "2026-08-18T10:15:02Z",
+      "sender": "ACC-ORIGIN-A",
+      "receiver": "MERCH-CONSULT-77",
+      "amount": 1200.0,
+      "currency": "EUR",
+      "transaction_type": "invoice_payment",
+      "account_id": "ACC-ORIGIN-A",
+      "bank": "Banca Ligure",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4405"
+    },
+    {
+      "transaction_id": "TXN-7006",
+      "timestamp": "2026-08-18T11:03:40Z",
+      "sender": "ACC-HOP-B",
+      "receiver": "MERCH-CONSULT-77",
+      "amount": 800.0,
+      "currency": "EUR",
+      "transaction_type": "invoice_payment",
+      "account_id": "ACC-HOP-B",
+      "bank": "Banca Ligure",
+      "gateway": "SEPA-Rails",
+      "status": "success",
+      "reference_id": "SEPA-4406"
+    }
+  ]
+}

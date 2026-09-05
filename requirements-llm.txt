@@ -1,0 +1,4 @@
+# Optional: LLM narrative enrichment (agent/llm.py).
+anthropic>=0.40.0
+# Optional convenience: loads .env so credentials stay out of the repository.
+python-dotenv>=1.0.0
