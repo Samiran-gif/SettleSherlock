@@ -1,0 +1,262 @@
+transaction_id,timestamp,event,code,detail
+TXN_OK_162,2026-09-03T08:20:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_162,2026-09-03T08:20:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_162,2026-09-03T08:21:17.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_138,2026-09-03T11:08:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_138,2026-09-03T11:08:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_138,2026-09-03T11:08:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_130,2026-09-03T11:57:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_130,2026-09-03T11:57:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_130,2026-09-03T11:57:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_130,2026-09-03T11:59:15.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_112,2026-09-03T15:05:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_112,2026-09-03T15:05:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_108,2026-09-03T15:07:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_108,2026-09-03T15:07:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_112,2026-09-03T15:08:31.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_112,2026-09-03T15:08:37.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_108,2026-09-03T15:09:53.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_108,2026-09-03T15:09:59.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_144,2026-09-03T15:39:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_144,2026-09-03T15:39:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_144,2026-09-03T15:39:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_120,2026-09-03T17:09:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_120,2026-09-03T17:09:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_120,2026-09-03T17:12:26.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_120,2026-09-03T17:12:32.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_160,2026-09-03T17:32:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_160,2026-09-03T17:32:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_160,2026-09-03T17:32:47.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_113,2026-09-03T19:22:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_113,2026-09-03T19:22:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_113,2026-09-03T19:25:55.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_113,2026-09-03T19:26:01.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_105,2026-09-03T20:24:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_105,2026-09-03T20:24:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_LD_143,2026-09-03T20:26:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_143,2026-09-03T20:26:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_143,2026-09-03T20:26:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_105,2026-09-03T20:26:40.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_105,2026-09-03T20:26:46.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_140,2026-09-03T20:33:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_140,2026-09-03T20:33:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_140,2026-09-03T20:33:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_127,2026-09-03T20:50:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_127,2026-09-03T20:50:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_127,2026-09-03T20:50:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_127,2026-09-03T20:54:35.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_176,2026-09-03T20:55:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_176,2026-09-03T20:55:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_176,2026-09-03T20:56:09.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_101,2026-09-03T21:28:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_101,2026-09-03T21:28:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_101,2026-09-03T21:32:17.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_101,2026-09-03T21:32:23.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_181,2026-09-03T22:23:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_181,2026-09-03T22:23:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_181,2026-09-03T22:23:30.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_145,2026-09-03T22:46:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_145,2026-09-03T22:46:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_145,2026-09-03T22:46:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_141,2026-09-03T22:47:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_141,2026-09-03T22:47:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_141,2026-09-03T22:47:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_129,2026-09-03T23:29:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_129,2026-09-03T23:29:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_129,2026-09-03T23:29:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_129,2026-09-03T23:33:48.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_106,2026-09-03T23:35:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_106,2026-09-03T23:35:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_106,2026-09-03T23:38:55.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_106,2026-09-03T23:39:01.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_175,2026-09-04T00:23:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_175,2026-09-04T00:23:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_175,2026-09-04T00:24:12.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_132,2026-09-04T01:12:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_132,2026-09-04T01:12:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_132,2026-09-04T01:12:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_132,2026-09-04T01:18:41.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_UNK_184,2026-09-04T01:34:00.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_173,2026-09-04T01:37:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_173,2026-09-04T01:37:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_173,2026-09-04T01:38:00.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_137,2026-09-04T01:55:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_137,2026-09-04T01:55:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_137,2026-09-04T01:55:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_137,2026-09-04T02:00:42.000Z,REJECTED,BNK_CUTOFF_MISSED,Missed settlement cutoff window
+TXN_UNK_185,2026-09-04T03:19:00.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_103,2026-09-04T04:11:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_103,2026-09-04T04:11:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_103,2026-09-04T04:15:56.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_103,2026-09-04T04:16:02.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_121,2026-09-04T04:25:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_121,2026-09-04T04:25:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_121,2026-09-04T04:27:41.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_121,2026-09-04T04:27:47.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_102,2026-09-04T06:09:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_102,2026-09-04T06:09:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_102,2026-09-04T06:13:18.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_102,2026-09-04T06:13:24.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_123,2026-09-04T07:20:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_123,2026-09-04T07:20:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_123,2026-09-04T07:29:44.000Z,REJECTED,BNK_INSTRUCTION_EXPIRED,Instruction expired before processing
+TXN_UNK_182,2026-09-04T07:49:00.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_177,2026-09-04T07:55:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_177,2026-09-04T07:55:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_177,2026-09-04T07:55:42.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_135,2026-09-04T08:17:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_135,2026-09-04T08:17:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_135,2026-09-04T08:17:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_135,2026-09-04T08:22:23.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_119,2026-09-04T09:22:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_119,2026-09-04T09:22:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_119,2026-09-04T09:25:48.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_119,2026-09-04T09:25:54.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_118,2026-09-04T10:45:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_118,2026-09-04T10:45:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_118,2026-09-04T10:47:39.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_118,2026-09-04T10:47:45.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_164,2026-09-04T10:51:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_164,2026-09-04T10:51:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_164,2026-09-04T10:52:20.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_128,2026-09-04T12:02:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_128,2026-09-04T12:02:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_128,2026-09-04T12:02:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_128,2026-09-04T12:07:55.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_107,2026-09-04T12:35:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_107,2026-09-04T12:35:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_107,2026-09-04T12:38:33.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_107,2026-09-04T12:38:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_172,2026-09-04T12:40:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_172,2026-09-04T12:40:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_172,2026-09-04T12:40:38.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_125,2026-09-04T12:44:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_125,2026-09-04T12:44:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_125,2026-09-04T12:44:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_125,2026-09-04T12:49:19.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_114,2026-09-04T12:53:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_114,2026-09-04T12:53:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_UNK_183,2026-09-04T12:56:00.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_114,2026-09-04T12:58:11.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_114,2026-09-04T12:58:17.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_146,2026-09-04T13:07:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_146,2026-09-04T13:07:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_146,2026-09-04T13:07:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_166,2026-09-04T14:16:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_166,2026-09-04T14:16:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_166,2026-09-04T14:17:22.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_110,2026-09-04T14:47:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_110,2026-09-04T14:47:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_116,2026-09-04T14:49:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_116,2026-09-04T14:49:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_110,2026-09-04T14:51:29.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_110,2026-09-04T14:51:35.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_116,2026-09-04T14:54:33.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_116,2026-09-04T14:54:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_117,2026-09-04T15:00:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_117,2026-09-04T15:00:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_117,2026-09-04T15:04:49.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_117,2026-09-04T15:04:55.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_136,2026-09-04T16:33:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_136,2026-09-04T16:33:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_136,2026-09-04T16:33:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_136,2026-09-04T16:37:56.000Z,REJECTED,BNK_CUTOFF_MISSED,Missed settlement cutoff window
+TXN_OK_159,2026-09-04T16:41:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_159,2026-09-04T16:41:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_159,2026-09-04T16:41:42.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_163,2026-09-04T16:51:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_163,2026-09-04T16:51:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_163,2026-09-04T16:51:46.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_170,2026-09-04T17:02:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_178,2026-09-04T17:02:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_170,2026-09-04T17:02:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_178,2026-09-04T17:02:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_170,2026-09-04T17:03:20.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_178,2026-09-04T17:03:23.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_165,2026-09-04T17:19:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_165,2026-09-04T17:19:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_165,2026-09-04T17:19:33.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_131,2026-09-04T17:50:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_131,2026-09-04T17:50:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_131,2026-09-04T17:50:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_131,2026-09-04T17:53:28.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_169,2026-09-04T19:37:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_169,2026-09-04T19:37:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_169,2026-09-04T19:37:53.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_124,2026-09-04T20:36:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_124,2026-09-04T20:36:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_124,2026-09-04T20:36:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_124,2026-09-04T20:38:51.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_104,2026-09-04T20:41:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_104,2026-09-04T20:41:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_104,2026-09-04T20:45:53.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_104,2026-09-04T20:45:59.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_168,2026-09-04T21:09:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_168,2026-09-04T21:09:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_168,2026-09-04T21:10:20.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_133,2026-09-04T23:04:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_133,2026-09-04T23:04:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_133,2026-09-04T23:04:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_133,2026-09-04T23:09:32.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_171,2026-09-05T00:16:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_171,2026-09-05T00:16:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_171,2026-09-05T00:16:50.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_109,2026-09-05T00:32:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_109,2026-09-05T00:32:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_109,2026-09-05T00:36:52.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_109,2026-09-05T00:36:58.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_167,2026-09-05T00:48:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_167,2026-09-05T00:48:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_167,2026-09-05T00:48:59.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_115,2026-09-05T00:54:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_115,2026-09-05T00:54:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_115,2026-09-05T00:56:52.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_115,2026-09-05T00:56:58.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_158,2026-09-05T01:57:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_158,2026-09-05T01:57:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_158,2026-09-05T01:57:37.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_126,2026-09-05T02:29:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_126,2026-09-05T02:29:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_126,2026-09-05T02:29:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_126,2026-09-05T02:32:47.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_180,2026-09-05T02:56:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_180,2026-09-05T02:56:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_180,2026-09-05T02:56:45.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_LD_139,2026-09-05T03:12:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_139,2026-09-05T03:12:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_139,2026-09-05T03:12:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_111,2026-09-05T03:22:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_111,2026-09-05T03:22:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_111,2026-09-05T03:25:42.000Z,ACK_RECEIVED,BNK_ACK,Late acknowledgement received
+TXN_BT_111,2026-09-05T03:25:48.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_174,2026-09-05T03:29:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_174,2026-09-05T03:29:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_174,2026-09-05T03:29:49.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_161,2026-09-05T03:33:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_161,2026-09-05T03:33:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_161,2026-09-05T03:33:48.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PD_134,2026-09-05T03:46:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PD_134,2026-09-05T03:46:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PD_134,2026-09-05T03:46:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_PD_134,2026-09-05T03:52:04.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_OK_179,2026-09-05T04:49:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_OK_179,2026-09-05T04:49:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_OK_179,2026-09-05T04:50:01.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_BT_122,2026-09-05T05:49:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BT_122,2026-09-05T05:49:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window
+TXN_BT_122,2026-09-05T05:58:12.000Z,REJECTED,BNK_INSTRUCTION_EXPIRED,Instruction expired before processing
+TXN_LD_142,2026-09-05T07:11:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LD_142,2026-09-05T07:11:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LD_142,2026-09-05T07:11:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_SUCCESS_001,2026-09-05T08:00:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_SUCCESS_001,2026-09-05T08:00:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_SUCCESS_001,2026-09-05T08:00:42.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_UNKNOWN_001,2026-09-05T08:25:00.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LEDGER_DELAY_001,2026-09-05T09:44:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_LEDGER_DELAY_001,2026-09-05T09:44:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_LEDGER_DELAY_001,2026-09-05T09:44:39.000Z,SETTLED,BNK_SETTLED,Funds debited and settled
+TXN_PROCESSOR_DELAY_001,2026-09-05T09:56:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_PROCESSOR_DELAY_001,2026-09-05T09:56:07.000Z,ACK_RECEIVED,BNK_ACK,Bank acknowledged instruction
+TXN_PROCESSOR_DELAY_001,2026-09-05T09:56:41.000Z,PROCESSING_DELAYED,BNK_QUEUE_BACKLOG,Processor reported batch queue backlog
+TXN_BANK_TIMEOUT_001,2026-09-05T09:58:04.000Z,REQUEST_SENT,,Settlement instruction transmitted
+TXN_BANK_TIMEOUT_001,2026-09-05T09:58:34.000Z,NO_RESPONSE,,No acknowledgement within 30s window

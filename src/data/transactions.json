@@ -1,0 +1,912 @@
+[
+  {
+    "id": "TXN_BANK_TIMEOUT_001",
+    "amountPaise": 2450000,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "IMPS",
+    "createdAt": "2026-09-05T09:58:00.000Z",
+    "scenario": "BANK_TIMEOUT"
+  },
+  {
+    "id": "TXN_BT_101",
+    "amountPaise": 1219923,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T21:28:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_102",
+    "amountPaise": 7432380,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T06:09:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_103",
+    "amountPaise": 3657326,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T04:11:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_104",
+    "amountPaise": 3202233,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T20:41:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_105",
+    "amountPaise": 7930476,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "UPI",
+    "createdAt": "2026-09-03T20:24:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_106",
+    "amountPaise": 6128137,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T23:35:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_107",
+    "amountPaise": 8571665,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T12:35:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_108",
+    "amountPaise": 1733067,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T15:07:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_109",
+    "amountPaise": 2452612,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T00:32:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_110",
+    "amountPaise": 3998160,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "CARD",
+    "createdAt": "2026-09-04T14:47:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_111",
+    "amountPaise": 8804384,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "CARD",
+    "createdAt": "2026-09-05T03:22:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_112",
+    "amountPaise": 414926,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "UPI",
+    "createdAt": "2026-09-03T15:05:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_113",
+    "amountPaise": 1191711,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T19:22:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_114",
+    "amountPaise": 301421,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-04T12:53:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_115",
+    "amountPaise": 4724723,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "IMPS",
+    "createdAt": "2026-09-05T00:54:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_116",
+    "amountPaise": 1550885,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "CARD",
+    "createdAt": "2026-09-04T14:49:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_117",
+    "amountPaise": 8010236,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "CARD",
+    "createdAt": "2026-09-04T15:00:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_118",
+    "amountPaise": 8323402,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T10:45:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_119",
+    "amountPaise": 6852955,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T09:22:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_120",
+    "amountPaise": 4806860,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T17:09:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_121",
+    "amountPaise": 835080,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "CARD",
+    "createdAt": "2026-09-04T04:25:00.000Z",
+    "scenario": "BANK_TIMEOUT_RESOLVED"
+  },
+  {
+    "id": "TXN_BT_122",
+    "amountPaise": 134444,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "IMPS",
+    "createdAt": "2026-09-05T05:49:00.000Z",
+    "scenario": "BANK_TIMEOUT_REVERSED"
+  },
+  {
+    "id": "TXN_BT_123",
+    "amountPaise": 4722096,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T07:20:00.000Z",
+    "scenario": "BANK_TIMEOUT_REVERSED"
+  },
+  {
+    "id": "TXN_GATEWAY_FAILED_001",
+    "amountPaise": 1200000,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T05:00:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_147",
+    "amountPaise": 3438266,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T22:02:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_148",
+    "amountPaise": 2460365,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T18:21:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_149",
+    "amountPaise": 4986376,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-05T06:30:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_150",
+    "amountPaise": 1236813,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "UPI",
+    "createdAt": "2026-09-03T09:01:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_151",
+    "amountPaise": 4738972,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T11:24:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_152",
+    "amountPaise": 2479066,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "UPI",
+    "createdAt": "2026-09-05T03:27:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_153",
+    "amountPaise": 1109742,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "IMPS",
+    "createdAt": "2026-09-03T20:01:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_154",
+    "amountPaise": 353456,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "CARD",
+    "createdAt": "2026-09-04T13:15:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_155",
+    "amountPaise": 100703,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T23:47:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_156",
+    "amountPaise": 1718108,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T11:52:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_GF_157",
+    "amountPaise": 4368016,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-04T10:34:00.000Z",
+    "scenario": "FAILED_GATEWAY"
+  },
+  {
+    "id": "TXN_LD_138",
+    "amountPaise": 1118473,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T11:08:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_139",
+    "amountPaise": 4320598,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "CARD",
+    "createdAt": "2026-09-05T03:12:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_140",
+    "amountPaise": 5963784,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "IMPS",
+    "createdAt": "2026-09-03T20:33:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_141",
+    "amountPaise": 7592825,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "CARD",
+    "createdAt": "2026-09-03T22:47:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_142",
+    "amountPaise": 2801542,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "IMPS",
+    "createdAt": "2026-09-05T07:11:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_143",
+    "amountPaise": 4381091,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "UPI",
+    "createdAt": "2026-09-03T20:26:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_144",
+    "amountPaise": 2755845,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "CARD",
+    "createdAt": "2026-09-03T15:39:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_145",
+    "amountPaise": 1995828,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "CARD",
+    "createdAt": "2026-09-03T22:46:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LD_146",
+    "amountPaise": 3207936,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T13:07:00.000Z",
+    "scenario": "LEDGER_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_LEDGER_DELAY_001",
+    "amountPaise": 5620000,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T09:44:00.000Z",
+    "scenario": "LEDGER_DELAY"
+  },
+  {
+    "id": "TXN_OK_158",
+    "amountPaise": 4045474,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-05T01:57:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_159",
+    "amountPaise": 8524823,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "CARD",
+    "createdAt": "2026-09-04T16:41:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_160",
+    "amountPaise": 3797074,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "CARD",
+    "createdAt": "2026-09-03T17:32:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_161",
+    "amountPaise": 233653,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "CARD",
+    "createdAt": "2026-09-05T03:33:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_162",
+    "amountPaise": 826990,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T08:20:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_163",
+    "amountPaise": 5344899,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T16:51:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_164",
+    "amountPaise": 2828937,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-04T10:51:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_165",
+    "amountPaise": 7267607,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-04T17:19:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_166",
+    "amountPaise": 2495708,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-04T14:16:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_167",
+    "amountPaise": 1097266,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T00:48:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_168",
+    "amountPaise": 4570598,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T21:09:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_169",
+    "amountPaise": 7374320,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T19:37:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_170",
+    "amountPaise": 8361191,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "CARD",
+    "createdAt": "2026-09-04T17:02:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_171",
+    "amountPaise": 2856076,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-05T00:16:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_172",
+    "amountPaise": 7076786,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T12:40:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_173",
+    "amountPaise": 7309859,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T01:37:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_174",
+    "amountPaise": 2685425,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "IMPS",
+    "createdAt": "2026-09-05T03:29:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_175",
+    "amountPaise": 4262888,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "CARD",
+    "createdAt": "2026-09-04T00:23:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_176",
+    "amountPaise": 3746570,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T20:55:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_177",
+    "amountPaise": 8140887,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T07:55:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_178",
+    "amountPaise": 3052375,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T17:02:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_179",
+    "amountPaise": 3458924,
+    "currency": "INR",
+    "merchantId": "MER_8823",
+    "merchantName": "Kirana Junction",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T04:49:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_180",
+    "amountPaise": 8008824,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-05T02:56:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_OK_181",
+    "amountPaise": 8252366,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T22:23:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_PD_124",
+    "amountPaise": 4688172,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T20:36:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_125",
+    "amountPaise": 880361,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "UPI",
+    "createdAt": "2026-09-04T12:44:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_126",
+    "amountPaise": 5983324,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-05T02:29:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_127",
+    "amountPaise": 5685459,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "CARD",
+    "createdAt": "2026-09-03T20:50:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_128",
+    "amountPaise": 4789979,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "UPI",
+    "createdAt": "2026-09-04T12:02:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_129",
+    "amountPaise": 642533,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-03T23:29:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_130",
+    "amountPaise": 348021,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "NEFT",
+    "createdAt": "2026-09-03T11:57:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_131",
+    "amountPaise": 323716,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T17:50:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_132",
+    "amountPaise": 6932589,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T01:12:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_133",
+    "amountPaise": 5209995,
+    "currency": "INR",
+    "merchantId": "MER_6610",
+    "merchantName": "Bluebird Travel",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T23:04:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_134",
+    "amountPaise": 2049767,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "CARD",
+    "createdAt": "2026-09-05T03:46:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_135",
+    "amountPaise": 1829716,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "CARD",
+    "createdAt": "2026-09-04T08:17:00.000Z",
+    "scenario": "PROCESSOR_DELAY_RESOLVED"
+  },
+  {
+    "id": "TXN_PD_136",
+    "amountPaise": 1069577,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "CARD",
+    "createdAt": "2026-09-04T16:33:00.000Z",
+    "scenario": "PROCESSOR_DELAY_REVERSED"
+  },
+  {
+    "id": "TXN_PD_137",
+    "amountPaise": 6157264,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T01:55:00.000Z",
+    "scenario": "PROCESSOR_DELAY_REVERSED"
+  },
+  {
+    "id": "TXN_PROCESSOR_DELAY_001",
+    "amountPaise": 875050,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-05T09:56:00.000Z",
+    "scenario": "PROCESSOR_DELAY"
+  },
+  {
+    "id": "TXN_SUCCESS_001",
+    "amountPaise": 1899000,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "NEFT",
+    "createdAt": "2026-09-05T08:00:00.000Z",
+    "scenario": "SUCCESS"
+  },
+  {
+    "id": "TXN_UNK_182",
+    "amountPaise": 1847530,
+    "currency": "INR",
+    "merchantId": "MER_2094",
+    "merchantName": "Lotus Diagnostics",
+    "method": "UPI",
+    "createdAt": "2026-09-04T07:49:00.000Z",
+    "scenario": "UNKNOWN"
+  },
+  {
+    "id": "TXN_UNK_183",
+    "amountPaise": 378044,
+    "currency": "INR",
+    "merchantId": "MER_3352",
+    "merchantName": "Sunrise Electronics",
+    "method": "IMPS",
+    "createdAt": "2026-09-04T12:56:00.000Z",
+    "scenario": "UNKNOWN"
+  },
+  {
+    "id": "TXN_UNK_184",
+    "amountPaise": 1703089,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "NEFT",
+    "createdAt": "2026-09-04T01:34:00.000Z",
+    "scenario": "UNKNOWN"
+  },
+  {
+    "id": "TXN_UNK_185",
+    "amountPaise": 1109034,
+    "currency": "INR",
+    "merchantId": "MER_4417",
+    "merchantName": "Northwind Retail",
+    "method": "CARD",
+    "createdAt": "2026-09-04T03:19:00.000Z",
+    "scenario": "UNKNOWN"
+  },
+  {
+    "id": "TXN_UNKNOWN_001",
+    "amountPaise": 3310000,
+    "currency": "INR",
+    "merchantId": "MER_7781",
+    "merchantName": "Chai and Co",
+    "method": "UPI",
+    "createdAt": "2026-09-05T08:25:00.000Z",
+    "scenario": "UNKNOWN"
+  }
+]

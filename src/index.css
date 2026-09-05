@@ -1,0 +1,386 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Declared as RGB triplets so Tailwind's `<alpha-value>` works.
+   Dark mode swaps the same names, so components never need `dark:` variants.
+--------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --c-bg: 248 250 252;
+    --c-surface: 255 255 255;
+    --c-elevated: 255 255 255;
+    --c-border: 226 232 240;
+    --c-border-strong: 203 213 225;
+    --c-text: 15 23 42;
+    --c-text-2: 71 85 105;
+    --c-muted: 148 163 184;
+
+    --c-primary: 79 70 229;
+    --c-primary-dark: 55 48 163;
+
+    --c-ai: 124 58 237;
+    --c-ai-bg: 245 243 255;
+    --c-ai-border: 221 214 254;
+    --c-ai-heading: 91 33 182;
+
+    --c-success: 5 150 105;
+    --c-warning: 217 119 6;
+    --c-failure: 220 38 38;
+    --c-info: 37 99 235;
+  }
+
+  .dark {
+    --c-bg: 8 11 20;
+    --c-surface: 15 20 34;
+    --c-elevated: 21 27 43;
+    --c-border: 37 45 61;
+    --c-border-strong: 52 64 84;
+    --c-text: 248 250 252;
+    --c-text-2: 167 176 192;
+    --c-muted: 102 112 133;
+
+    --c-primary: 129 140 248;
+    --c-primary-dark: 99 102 241;
+
+    --c-ai: 167 139 250;
+    --c-ai-bg: 30 22 56;
+    --c-ai-border: 76 29 149;
+    --c-ai-heading: 196 181 253;
+
+    --c-success: 52 211 153;
+    --c-warning: 251 191 36;
+    --c-failure: 248 113 113;
+    --c-info: 96 165 250;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'tnum';
+  }
+
+  /* Visible, consistent focus for keyboard users on every interactive element. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--c-bg));
+  }
+
+  /* Tabular figures keep timestamps and amounts from jittering. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-line bg-surface shadow-card;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between gap-3 border-b border-line px-4 py-3;
+  }
+
+  .section-title {
+    @apply text-[13px] font-semibold uppercase tracking-wider text-ink-2;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-surface
+           px-3 py-2 text-sm font-medium text-ink transition-colors
+           hover:bg-bg disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-ai {
+    @apply border-transparent bg-ai text-white hover:opacity-90;
+  }
+
+  /* The "Why?" affordance attached to every AI claim. */
+  .why-btn {
+    @apply inline-flex items-center gap-1 rounded border border-ai-line bg-ai-bg px-1.5 py-0.5
+           align-middle text-[11px] font-semibold text-ai transition-colors
+           hover:border-ai hover:bg-ai hover:text-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-2 py-0.5
+           text-[11px] font-medium text-ink-2;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Transaction state animations.
+
+   One keyframe set per node state, driven by a `data-state` attribute so the
+   same component covers every case. Everything here is CSS -- no animation
+   library, and nothing that forces layout (transform/opacity only).
+--------------------------------------------------------------------------- */
+
+/* Node arrival: the pulse lands and the node settles into its resolved state. */
+@keyframes node-arrive {
+  0% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* SUCCESS: a brief highlight ring that expands and fades once. */
+@keyframes success-flare {
+  0% {
+    box-shadow: 0 0 0 0 rgb(var(--c-success) / 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(var(--c-success) / 0);
+  }
+}
+
+@keyframes check-draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* PROCESSING: a pulse travelling around the node. */
+@keyframes processing-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* PENDING: slow breathing ring. */
+@keyframes pending-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(var(--c-warning) / 0.35);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgb(var(--c-warning) / 0);
+    opacity: 0.82;
+  }
+}
+
+/* FAILED: a short horizontal shake plus a single ripple. */
+@keyframes failed-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-4px);
+  }
+  30% {
+    transform: translateX(4px);
+  }
+  45% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes failed-ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgb(var(--c-failure) / 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgb(var(--c-failure) / 0);
+  }
+}
+
+/* UNKNOWN: barely-there flicker signalling "no data", not "broken". */
+@keyframes unknown-flicker {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  45% {
+    opacity: 0.78;
+  }
+  70% {
+    opacity: 0.5;
+  }
+}
+
+/* Connector: a luminous pulse travelling from one system to the next. */
+@keyframes pulse-travel {
+  0% {
+    left: -18%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes connector-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -180% 0;
+  }
+  to {
+    background-position: 180% 0;
+  }
+}
+
+@layer utilities {
+  /* `--i` staggers each node so the transaction visibly moves through the
+     infrastructure rather than everything appearing at once. */
+  .node-arrive {
+    animation: node-arrive 420ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 620ms);
+  }
+
+  .connector-fill {
+    transform-origin: left center;
+    animation: connector-fill 560ms cubic-bezier(0.4, 0, 0.2, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 620ms + 220ms);
+  }
+
+  .pulse-travel {
+    animation: pulse-travel 900ms cubic-bezier(0.4, 0, 0.2, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 620ms + 180ms);
+  }
+
+  .state-success {
+    animation: success-flare 900ms ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 620ms + 260ms);
+  }
+
+  .state-pending {
+    animation: pending-breathe 2600ms ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * 620ms);
+  }
+
+  .state-failed {
+    animation:
+      failed-shake 420ms ease-in-out backwards,
+      failed-ripple 900ms ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 620ms + 200ms);
+  }
+
+  .state-unknown {
+    animation: unknown-flicker 4200ms ease-in-out infinite;
+  }
+
+  .state-processing-ring {
+    animation: processing-sweep 1600ms linear infinite;
+  }
+
+  .check-draw {
+    stroke-dasharray: 24;
+    animation: check-draw 340ms ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 620ms + 340ms);
+  }
+
+  .fade-rise {
+    animation: fade-rise 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .drawer-in {
+    animation: drawer-in 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .overlay-in {
+    animation: overlay-in 180ms ease-out;
+  }
+
+  .shimmer {
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--c-border) / 0) 0%,
+      rgb(var(--c-border) / 0.9) 50%,
+      rgb(var(--c-border) / 0) 100%
+    );
+    background-size: 180% 100%;
+    animation: shimmer 1400ms ease-in-out infinite;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion: hold every animation at its final frame. States must remain
+   distinguishable by colour, glyph, and border style alone.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
