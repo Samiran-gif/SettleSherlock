@@ -3,25 +3,28 @@
 // Entirely local arithmetic over the mock dataset -- the LLM is never asked to
 // count or average anything.
 
-import { allTransactionIds } from './dataset'
+import { allTransactionIds, datasetRevision } from './dataset'
 import { traceTransaction } from './trace'
 import type { SimilarPeer, SimilarSummary, TracedTransaction, TxnStatus } from '../types'
 
 /**
  * Tracing every transaction is cheap but not free, and the signature index is
- * reused by both the similar-transactions panel and system health. Built once.
+ * reused by both the similar-transactions panel and system health, so it is
+ * memoised. The demo clock offset is fixed per page load, which keeps a build
+ * stable -- but ingesting a backend transaction changes the corpus, so the
+ * dataset revision is part of the cache identity.
  */
-let cache: { now: number; traces: TracedTransaction[] } | null = null
+let cache: { revision: number; traces: TracedTransaction[] } | null = null
 
 function allTraces(now: number): TracedTransaction[] {
-  // The demo clock offset is fixed per page load, so a single build is stable.
-  if (cache) return cache.traces
+  const revision = datasetRevision()
+  if (cache && cache.revision === revision) return cache.traces
   const traces: TracedTransaction[] = []
   for (const id of allTransactionIds()) {
     const t = traceTransaction(id, now)
     if (t) traces.push(t)
   }
-  cache = { now, traces }
+  cache = { revision, traces }
   return traces
 }
 

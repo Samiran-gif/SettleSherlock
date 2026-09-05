@@ -153,6 +153,19 @@ const byId: Record<SystemId, Map<string, LogRow[]>> = {
 // Live backend transactions
 // ---------------------------------------------------------------------------
 
+/**
+ * Bumped whenever a backend transaction is ingested.
+ *
+ * lib/similar.ts memoises a trace of the whole corpus; without a revision to
+ * compare against, a transaction fetched from the backend never appeared in
+ * the cohort statistics or in system health.
+ */
+let revision = 0
+
+export function datasetRevision(): number {
+  return revision
+}
+
 function upsertLog(system: SystemId, row: LogRow): void {
   const existing = byId[system].get(row.transactionId)
 
@@ -170,6 +183,17 @@ function upsertLog(system: SystemId, row: LogRow): void {
   } else {
     byId[system].set(row.transactionId, [row])
   }
+
+  // allLogs() reads the flat arrays, so health derivation needs them too.
+  const flat = system === 'gateway' ? gateway : system === 'bank' ? bank : ledger
+  const at = flat.findIndex(
+    (item) =>
+      item.transactionId === row.transactionId &&
+      item.timestamp === row.timestamp &&
+      item.event === row.event,
+  )
+  if (at >= 0) flat[at] = row
+  else flat.push(row)
 }
 
 export interface BackendTransactionRecord {
@@ -227,11 +251,17 @@ export function ingestBackendTransaction(data: BackendTransactionData): void {
 
     if (!source) continue
 
+    // new Date(x).toISOString() throws RangeError on an unparseable timestamp,
+    // which would abort the whole ingest. Skip the row instead: a partial
+    // trace is still useful, a thrown lookup is not.
+    const parsed = Date.parse(source.timestamp)
+    if (!Number.isFinite(parsed)) continue
+
     const event = backendEvent(system, source.status)
 
     upsertLog(system, {
       transactionId: data.transaction_id,
-      timestamp: new Date(source.timestamp).toISOString(),
+      timestamp: new Date(parsed).toISOString(),
       event,
       code: null,
       detail: backendDetail(system, source),
@@ -265,6 +295,8 @@ export function ingestBackendTransaction(data: BackendTransactionData): void {
     transactions.push(record)
     manifestById.set(record.id, record)
   }
+
+  revision++
 }
 
 const manifestById = new Map(transactions.map((t) => [t.id, t]))

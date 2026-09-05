@@ -20,9 +20,16 @@ function apiPlugin(env: NodeJS.ProcessEnv): Plugin {
     }
 
     if (url.startsWith('/api/ai-status')) {
-      const s = aiStatus(env)
       // Deliberately reports only availability -- never the key itself.
-      json(200, { available: s.available, reason: s.reason, model: s.model })
+      aiStatus(env)
+        .then((s) => json(200, { available: s.available, reason: s.reason, model: s.model }))
+        .catch(() =>
+          json(200, {
+            available: false,
+            reason: 'Backend availability could not be determined.',
+            model: '',
+          }),
+        )
       return
     }
 
@@ -87,7 +94,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         '/api/backend': {
           // Same source of truth as the analyze bridge in server/analyze.ts.
-          target: env.SETTLESHERLOCK_BACKEND_URL?.trim() || 'http://127.0.0.1:8010',
+          target: env.SETTLESHERLOCK_BACKEND_URL?.trim() || 'http://127.0.0.1:8011',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api\/backend/, ''),
           // Without this, an unreachable backend surfaces as a bodyless HTTP

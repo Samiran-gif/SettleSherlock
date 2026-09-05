@@ -11,7 +11,7 @@ import { renderToString } from 'react-dom/server'
 import { createElement } from 'react'
 
 import { traceTransaction } from '../src/lib/trace'
-import { findSimilar } from '../src/lib/similar'
+import { findSimilar, findSimilarPeers } from '../src/lib/similar'
 import { systemHealth } from '../src/lib/health'
 import { ruleBasedDiagnosis } from '../src/lib/rulesDiagnosis'
 
@@ -48,6 +48,7 @@ test('every demo scenario renders the whole panel set', () => {
     const txn = traceTransaction(id)
     assert.ok(txn, `no trace for ${id}`)
     const similar = findSimilar(txn)
+    const allPeers = findSimilarPeers(txn)
     const diagnosis = ruleBasedDiagnosis(txn)
     const noop = () => {}
 
@@ -86,7 +87,12 @@ test('every demo scenario renders the whole panel set', () => {
       [
         'similar',
         renderToString(
-          createElement(SimilarTransactions, { summary: similar, expanded: true, onToggle: noop }),
+          createElement(SimilarTransactions, {
+            summary: similar,
+            allPeers,
+            expanded: true,
+            onToggle: noop,
+          }),
         ),
       ],
       ['raw', renderToString(createElement(RawEvents, { txn, open: true, onToggle: noop }))],

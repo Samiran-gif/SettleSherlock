@@ -3,7 +3,7 @@
 import { DEMO_TRANSACTION_IDS, ingestBackendTransaction } from './lib/dataset'
 import { BackendUnavailableError, fetchBackendTransaction } from './lib/backend'
 import { traceTransaction } from './lib/trace'
-import { findSimilar } from './lib/similar'
+import { findSimilar, findSimilarPeers } from './lib/similar'
 import { systemHealth } from './lib/health'
 import { ruleBasedDiagnosis } from './lib/rulesDiagnosis'
 import { cachedDiagnosis, fetchAiStatus, investigate } from './lib/aiClient'
@@ -73,6 +73,8 @@ export default function App() {
   // ---- derived, all deterministic -----------------------------------------
   const txn = useMemo(() => traceTransaction(txnId), [txnId])
   const similar = useMemo(() => (txn ? findSimilar(txn) : null), [txn])
+  // The full cohort, for the drill-down table only. Never sent to the model.
+  const allPeers = useMemo(() => (txn ? findSimilarPeers(txn) : []), [txn])
   const health = useMemo(() => systemHealth(), [])
 
   const cohort = useMemo(
@@ -126,6 +128,9 @@ export default function App() {
     },
     [txn, cohort, loading],
   )
+
+  const bankSystem = txn?.systems.find((system) => system.system === 'bank')
+  const ledgerSystem = txn?.systems.find((system) => system.system === 'ledger')
 
   const onSearch = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -213,8 +218,8 @@ export default function App() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-sm font-semibold leading-tight text-ink">Settlement Investigator</h1>
-                <p className="text-2xs text-muted">AI-assisted settlement investigation console</p>
+                <h1 className="text-sm font-semibold leading-tight text-ink">SettleSherlock</h1>
+                <p className="text-2xs text-muted">Evidence-first settlement investigation</p>
               </div>
             </div>
 
@@ -267,10 +272,9 @@ export default function App() {
                 className="w-56 rounded-md border border-line bg-surface px-2.5 py-1.5 font-mono text-xs text-ink placeholder:font-sans placeholder:text-muted"
                 autoComplete="off"
               />
-                                            <button type="submit" className="btn py-1.5">
-                  Trace
-                </button>
-                
+              <button type="submit" className="btn py-1.5">
+                Trace
+              </button>
             </form>
 
             <span className="hidden text-2xs uppercase tracking-wide text-muted sm:inline">Demo cases</span>
@@ -355,6 +359,16 @@ export default function App() {
                   </button>
                 </div>
               </div>
+              <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-line pt-3 text-2xs text-ink-2">
+                <span className="chip border-success/40 bg-success/5 text-success">Gateway correlated</span>
+                <span className={`chip ${bankSystem?.reached ? 'border-success/40 bg-success/5 text-success' : 'border-warning/40 bg-warning/5 text-warning'}`}>
+                  {bankSystem?.reached ? 'Bank correlated' : 'Bank evidence gap'}
+                </span>
+                <span className={`chip ${ledgerSystem?.reached ? 'border-success/40 bg-success/5 text-success' : 'border-warning/40 bg-warning/5 text-warning'}`}>
+                  {ledgerSystem?.reached ? 'Ledger correlated' : 'Ledger evidence gap'}
+                </span>
+                <span className="ml-auto hidden sm:inline">Trace built from 3 independent systems</span>
+              </div>
             </div>
 
             <div className="mb-4">
@@ -410,6 +424,7 @@ export default function App() {
                 <SimilarTransactions
                   ref={similarRef}
                   summary={similar}
+                  allPeers={allPeers}
                   expanded={similarExpanded}
                   onToggle={() => setSimilarExpanded((v) => !v)}
                 />
@@ -450,8 +465,9 @@ export default function App() {
 
 /** Escalation note drafted from the trace. No AI call. */
 function EscalationDialog({ note, onClose }: { note: string; onClose: () => void }) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState<'idle' | 'done' | 'failed'>('idle')
   const closeRef = useRef<HTMLButtonElement>(null)
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     closeRef.current?.focus()
@@ -461,6 +477,38 @@ function EscalationDialog({ note, onClose }: { note: string; onClose: () => void
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [onClose])
+
+  // The label reset must not fire after unmount.
+  useEffect(
+    () => () => {
+      if (resetTimer.current !== null) clearTimeout(resetTimer.current)
+    },
+    [],
+  )
+
+  const flash = (state: 'done' | 'failed') => {
+    setCopied(state)
+    if (resetTimer.current !== null) clearTimeout(resetTimer.current)
+    resetTimer.current = setTimeout(() => setCopied('idle'), 1800)
+  }
+
+  /**
+   * `navigator.clipboard` is undefined outside a secure context -- opening the
+   * demo over plain http on a LAN address is enough. Optional chaining only
+   * guards the property read, so calling .then() on the result threw. Fall back
+   * to selecting the note so the text is still recoverable by hand.
+   */
+  const copy = () => {
+    const clipboard = navigator.clipboard
+    if (!clipboard?.writeText) {
+      flash('failed')
+      return
+    }
+    clipboard.writeText(note).then(
+      () => flash('done'),
+      () => flash('failed'),
+    )
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -491,21 +539,10 @@ function EscalationDialog({ note, onClose }: { note: string; onClose: () => void
           <button onClick={onClose} className="btn">
             Close
           </button>
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              void navigator.clipboard?.writeText(note).then(
-                () => {
-                  setCopied(true)
-                  setTimeout(() => setCopied(false), 1800)
-                },
-                () => setCopied(false),
-              )
-            }}
-          >
-            {copied ? 'Copied' : 'Copy note'}
+          <button className="btn btn-primary" onClick={copy}>
+            {copied === 'done' ? 'Copied' : copied === 'failed' ? 'Copy failed' : 'Copy note'}
           </button>
-                </footer>
+        </footer>
       </div>
     </div>
   )

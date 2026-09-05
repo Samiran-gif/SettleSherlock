@@ -6,7 +6,7 @@
 import { forwardRef, useState } from 'react'
 import { formatCurrency, formatDateTime, formatDuration } from '../lib/format'
 import { StatusBadge } from './primitives'
-import type { SimilarSummary } from '../types'
+import type { SimilarPeer, SimilarSummary } from '../types'
 
 function Stat({ value, label, tone = 'text-ink' }: { value: string; label: string; tone?: string }) {
   return (
@@ -17,12 +17,24 @@ function Stat({ value, label, tone = 'text-ink' }: { value: string; label: strin
   )
 }
 
+const PREVIEW_ROWS = 5
+
 export const SimilarTransactions = forwardRef<
   HTMLElement,
-  { summary: SimilarSummary; expanded: boolean; onToggle: () => void }
->(function SimilarTransactions({ summary, expanded, onToggle }, ref) {
+  {
+    summary: SimilarSummary
+    /**
+     * Every peer in the cohort. `summary.peers` is capped for the headline
+     * stats, so rendering the table from it made "Show all 8" appear next to
+     * "40 similar transactions".
+     */
+    allPeers: SimilarPeer[]
+    expanded: boolean
+    onToggle: () => void
+  }
+>(function SimilarTransactions({ summary, allPeers, expanded, onToggle }, ref) {
   const [showAll, setShowAll] = useState(false)
-  const peers = showAll ? summary.peers : summary.peers.slice(0, 5)
+  const peers = showAll ? allPeers : allPeers.slice(0, PREVIEW_ROWS)
 
   return (
     <section ref={ref} className="card scroll-mt-4" aria-labelledby="similar-title">
@@ -95,9 +107,9 @@ export const SimilarTransactions = forwardRef<
                   </tbody>
                 </table>
 
-                {summary.peers.length > 5 && (
+                {allPeers.length > PREVIEW_ROWS && (
                   <button type="button" onClick={() => setShowAll((v) => !v)} className="btn mt-3">
-                    {showAll ? 'Show fewer' : `Show all ${summary.peers.length}`}
+                    {showAll ? 'Show fewer' : `Show all ${allPeers.length}`}
                   </button>
                 )}
               </div>

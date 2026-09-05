@@ -50,17 +50,17 @@ cp .env.example .env
 ## Run
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8011
 ```
 
 | URL | Purpose |
 | --- | --- |
-| http://localhost:8000/ | Service metadata |
-| http://localhost:8000/api/v1/health | Health check |
-| http://localhost:8000/api/v1/transactions/TXN10001 | Transaction lookup |
-| http://localhost:8000/api/v1/transactions/TXN10001/investigation | Investigation |
-| http://localhost:8000/api/v1/transactions/TXN10001/explanation | AI explanation |
-| http://localhost:8000/docs | Swagger UI |
+| http://localhost:8011/ | Service metadata |
+| http://localhost:8011/api/v1/health | Health check |
+| http://localhost:8011/api/v1/transactions/TXN10001 | Transaction lookup |
+| http://localhost:8011/api/v1/transactions/TXN10001/investigation | Investigation |
+| http://localhost:8011/api/v1/transactions/TXN10001/explanation | AI explanation |
+| http://localhost:8011/docs | Swagger UI |
 
 ## Mock data
 

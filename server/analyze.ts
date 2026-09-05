@@ -5,7 +5,7 @@
 
 const BACKEND_URL =
   process.env.SETTLESHERLOCK_BACKEND_URL?.trim() ||
-  'http://127.0.0.1:8010'
+  'http://127.0.0.1:8011'
 
 const MODEL = 'SettleSherlock investigation engine'
 
@@ -76,17 +76,32 @@ interface FrontendPayload {
   evidence: FrontendEvidence[]
 }
 
+export interface AiStatusResult {
+  available: boolean
+  reason: string
+  model: string
+}
+
+/** A probe is cheap but the badge re-mounts often; a short TTL is plenty. */
+const STATUS_PROBE_TIMEOUT_MS = 2000
+const STATUS_CACHE_TTL_MS = 5000
+
+let statusCache: { at: number; url: string; value: AiStatusResult } | null = null
+
+/** Test seam: drops the memoised probe result. */
+export function resetAiStatusCache(): void {
+  statusCache = null
+}
+
 /**
- * Reported to the UI.
+ * Reported to the UI as the "AI ready" / "AI offline" badge.
  *
- * This is now the SettleSherlock backend rather than Anthropic.
+ * This has to actually contact the backend. Returning `available: true` just
+ * because a URL is configured made the badge claim readiness while the
+ * service was down, which is the one thing the badge exists to tell you.
  */
-export function aiStatus(
-  env: NodeJS.ProcessEnv,
-): { available: boolean; reason: string; model: string } {
-  const url =
-    env.SETTLESHERLOCK_BACKEND_URL?.trim() ||
-    BACKEND_URL
+export async function aiStatus(env: NodeJS.ProcessEnv): Promise<AiStatusResult> {
+  const url = env.SETTLESHERLOCK_BACKEND_URL?.trim() || BACKEND_URL
 
   if (!url) {
     return {
@@ -96,10 +111,40 @@ export function aiStatus(
     }
   }
 
-  return {
-    available: true,
-    reason: `Connected to SettleSherlock at ${url}`,
-    model: MODEL,
+  const now = Date.now()
+  if (statusCache && statusCache.url === url && now - statusCache.at < STATUS_CACHE_TTL_MS) {
+    return statusCache.value
+  }
+
+  const value = await probeBackend(url)
+  statusCache = { at: now, url, value }
+  return value
+}
+
+async function probeBackend(url: string): Promise<AiStatusResult> {
+  const base = url.replace(/\/+$/, '')
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), STATUS_PROBE_TIMEOUT_MS)
+
+  try {
+    // Any HTTP reply -- 404 included -- proves something is listening, which is
+    // all this check can honestly assert without knowing the health route.
+    await fetch(base, { method: 'GET', signal: controller.signal })
+    return {
+      available: true,
+      reason: `Connected to SettleSherlock at ${base}`,
+      model: MODEL,
+    }
+  } catch {
+    return {
+      available: false,
+      reason: controller.signal.aborted
+        ? `SettleSherlock at ${base} did not respond within ${STATUS_PROBE_TIMEOUT_MS}ms.`
+        : `Cannot reach SettleSherlock at ${base}. Is the service running?`,
+      model: MODEL,
+    }
+  } finally {
+    clearTimeout(timer)
   }
 }
 
@@ -127,6 +172,20 @@ function moneySummary(payload: FrontendPayload): string {
   }
 
   return 'No completed settlement movement is indicated by the supplied transaction state.'
+}
+
+/**
+ * Substring test that ignores empty needles.
+ *
+ * `''.includes` style checks are always true, so an evidence row with no code
+ * or no detail used to match every statement mentioning its system -- the
+ * citation then pointed at an arbitrary record.
+ */
+function mentions(haystack: string, needle: string | null): boolean {
+  if (needle === null) return false
+  const trimmed = needle.trim().toLowerCase()
+  if (trimmed === '') return false
+  return haystack.includes(trimmed)
 }
 
 /**
@@ -159,11 +218,7 @@ function mapEvidenceIds(
     const match = frontendEvidence.find(
       (e) =>
         e.system === system &&
-        (
-          text.includes((e.event || '').toLowerCase()) ||
-          text.includes((e.detail || '').toLowerCase()) ||
-          text.includes((e.code || '').toLowerCase())
-        ),
+        (mentions(text, e.event) || mentions(text, e.detail) || mentions(text, e.code)),
     )
 
     if (match && !ids.includes(match.id)) {
@@ -172,10 +227,15 @@ function mapEvidenceIds(
     }
 
     // If exact wording differs between the Python backend and frontend trace,
-    // use the strongest event for that system.
-    const fallback = frontendEvidence.find(
+    // fall back to the strongest event for that system: one carrying a failure
+    // code if there is one, otherwise the most recent.
+    const forSystem = frontendEvidence.filter(
       (e) => e.system === system && e.kind === 'event',
     )
+
+    const fallback =
+      forSystem.find((e) => e.code !== null && e.code !== '') ??
+      forSystem[forSystem.length - 1]
 
     if (fallback && !ids.includes(fallback.id)) {
       ids.push(fallback.id)
@@ -416,6 +476,29 @@ export async function runAnalysis(
       body: {
         error: 'missing_transaction_id',
         reason: 'Transaction ID is required.',
+      },
+    }
+  }
+
+  // buildDiagnosis indexes into both of these. Without this check a malformed
+  // body threw a TypeError that the catch below reported as "backend
+  // unavailable" -- blaming the backend for our own bad request.
+  if (!Array.isArray(p.evidence)) {
+    return {
+      status: 400,
+      body: {
+        error: 'invalid_evidence',
+        reason: 'Analysis payload must include an evidence array.',
+      },
+    }
+  }
+
+  if (typeof p.money !== 'object' || p.money === null) {
+    return {
+      status: 400,
+      body: {
+        error: 'invalid_money_state',
+        reason: 'Analysis payload must include a money state object.',
       },
     }
   }
